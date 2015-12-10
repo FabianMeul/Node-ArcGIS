@@ -1,19 +1,15 @@
 // index.js
 //
 
-'use strict';
+"use strict";
 
 // Constants
-var oAuth = require('./lib/auth/oauth.js');
-var Geocode = require('./lib/geocode.js');
-
-// Get the access token
-oAuth.requestToken();
+var oAuth = require("./lib/auth/oauth.js");
+var Geocode = require("./lib/geocode.js");
 
 /**
  * Module exports
  */
-
 // oAuth module
 exports.oAuth = oAuth;
 
