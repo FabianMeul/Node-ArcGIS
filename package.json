@@ -4,13 +4,16 @@
   "description": "Node.js implementation for the ArcGIS REST API.",
   "main": "index.js",
   "directories": {
-      "lib": "./lib"
+    "lib": "./lib"
   },
   "dependencies": {
     "q": "^1.4.1",
     "request": "^2.67.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-eslint": "^1.1.1"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -25,8 +28,8 @@
     "REST"
   ],
   "author": {
-      "name": "Fabian Meul",
-      "email": "fabian.meul@gmail.com"
+    "name": "Fabian Meul",
+    "email": "fabian.meul@gmail.com"
   },
   "license": "MIT",
   "bugs": {
