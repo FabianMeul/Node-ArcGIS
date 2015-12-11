@@ -6,6 +6,9 @@ describe("ArcGIS Geocode", function() {
     describe("ArcGIS Geocode Find Address", function() {
         it("fetches an address", function() {
 
+            // Allow 5000ms for this test
+            this.timeout(5000);
+
             var requestObject = {
                 text: "Veldkant 35c, Kontich"
             };
@@ -23,6 +26,9 @@ describe("ArcGIS Geocode", function() {
     describe("ArcGIS Geocode Suggest Address", function() {
         it("fetches suggestions", function() {
 
+            // Allow 5000ms for this test
+            this.timeout(5000);
+
             var requestObject = {
                 text: "Veldkant 35c"
             };
@@ -39,6 +45,9 @@ describe("ArcGIS Geocode", function() {
     // Find Address candidates
     describe("ArcGIS Geocode Find Address Candidates", function() {
         it("Finds an address candidate based on parameters", function() {
+
+            // Allow 5000ms for this test
+            this.timeout(5000);
 
             var requestObject = {
                 address: "Veldkant 35c",
@@ -59,6 +68,9 @@ describe("ArcGIS Geocode", function() {
     // Geocode Address
     describe("ArcGIS Geocode Address", function() {
         it("requires a token", function() {
+
+            // Allow 5000ms for this test
+            this.timeout(5000);
 
             var requestObject = {
                 addresses: {
@@ -86,6 +98,9 @@ describe("ArcGIS Geocode", function() {
     // Reverse Geocode
     describe("ArcGIS Geocode Reverse Geocode", function() {
         it("fetches an address based on coordinates", function() {
+
+            // Allow 5000ms for this test
+            this.timeout(5000);
 
             var requestObject = {
                 // TODO
