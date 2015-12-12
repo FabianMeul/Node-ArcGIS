@@ -4,7 +4,7 @@ var ArcGIS    = require("../index");
 describe("ArcGIS Geocode", function() {
     // Find Address
     describe("ArcGIS Geocode Find Address", function() {
-        it("fetches an address", function() {
+        it("Sucessfully fetches an address", function() {
 
             // Allow 5000ms for this test
             this.timeout(5000);
@@ -18,13 +18,31 @@ describe("ArcGIS Geocode", function() {
                     expect(response).to.ownProperty("locations");
                     expect(response.locations).to.be.an("array");
                 }
-            )
+            );
+        });
+
+        it("Fails at fetching an address", function() {
+
+            // Allow 5000ms for this test
+            this.timeout(5000);
+
+            var requestObject = {
+                text: "Veldkant 35c, Kontich",
+                // Requesting data for storage requires a (paid) oAuth token.
+                forStorage: true
+            };
+
+            return ArcGIS.Geocode.find(requestObject).then(
+                function(response) {
+                    expect(response).to.ownProperty("error");
+                }
+            );
         });
     });
 
     // Suggest Addresses
     describe("ArcGIS Geocode Suggest Address", function() {
-        it("fetches suggestions", function() {
+        it("Successfully fetches suggestions", function() {
 
             // Allow 5000ms for this test
             this.timeout(5000);
@@ -38,13 +56,28 @@ describe("ArcGIS Geocode", function() {
                     expect(response).to.ownProperty("suggestions");
                     expect(response.suggestions).to.be.an("array");
                 }
-            )
+            );
+        });
+
+        it("Fails at fetching suggestions", function() {
+
+            // Allow 5000ms for this test
+            this.timeout(5000);
+
+            // Empty object causes fail
+            var requestObject = {};
+
+            return ArcGIS.Geocode.suggest(requestObject).then(
+                function(response) {
+                    expect(response).to.ownProperty("error");
+                }
+            );
         });
     });
 
     // Find Address candidates
     describe("ArcGIS Geocode Find Address Candidates", function() {
-        it("Finds an address candidate based on parameters", function() {
+        it("Successfully finds an address candidate based on parameters", function() {
 
             // Allow 5000ms for this test
             this.timeout(5000);
@@ -61,7 +94,23 @@ describe("ArcGIS Geocode", function() {
                     expect(response.candidates).to.be.an("array");
                     expect(response).to.ownProperty("spatialReference");
                 }
-            )
+            );
+        });
+
+        it("Fails at finding an address candidate based on parameters", function() {
+
+            // Allow 5000ms for this test
+            this.timeout(5000);
+
+            var requestObject = {
+                forStorage: true
+            };
+
+            return ArcGIS.Geocode.findAddressCandidates(requestObject).then(
+                function(response) {
+                    expect(response).to.ownProperty("error");
+                }
+            );
         });
     });
 
@@ -91,7 +140,7 @@ describe("ArcGIS Geocode", function() {
                     expect(response.error).to.ownProperty("code");
                     expect(response.error.code).to.be.equal(499);
                 }
-            )
+            );
         });
     });
 
@@ -122,7 +171,7 @@ describe("ArcGIS Geocode", function() {
                     expect(response).to.ownProperty("location");
                     expect(response.location).to.ownProperty("spatialReference");
                 }
-            )
+            );
         });
     });
 });
