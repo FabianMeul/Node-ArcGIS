@@ -4,8 +4,9 @@
 "use strict";
 
 // Constants
-var oAuth = require("./lib/auth/oauth.js");
-var Geocode = require("./lib/geocode.js");
+var oAuth = require("./lib/auth/oauth");
+var Geocode = require("./lib/geocode");
+var Routing = require("./lib/routing");
 
 /**
  * Module exports
@@ -15,3 +16,6 @@ exports.oAuth = oAuth;
 
 // Geocoding module
 exports.Geocode = Geocode;
+
+// Routing module
+exports.Routing = Routing;

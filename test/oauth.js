@@ -9,7 +9,7 @@ describe("ArcGIS oAuth", function() {
             var clientID = "xxx";
             var newClientID = ArcGIS.oAuth.setClientID(clientID);
 
-            expect(newClientID).to.be.equal(clientID)
+            expect(newClientID).to.be.equal(clientID);
         });
 
         it("Sets the Client Secret", function() {
@@ -17,7 +17,7 @@ describe("ArcGIS oAuth", function() {
             var clientSecret = "xxx";
             var newClientSecret = ArcGIS.oAuth.setClientSecret(clientSecret);
 
-            expect(newClientSecret).to.be.equal(clientSecret)
+            expect(newClientSecret).to.be.equal(clientSecret);
         });
     });
 
@@ -37,9 +37,9 @@ describe("ArcGIS oAuth", function() {
 
             return ArcGIS.oAuth.requestToken().then().catch(
                 function(rejection) {
-                    expect(rejection).to.ownProperty("error")
+                    expect(rejection).to.ownProperty("error");
                 }
-            )
+            );
         });
     });
 });
