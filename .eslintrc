@@ -1,7 +1,7 @@
 {
   // http://eslint.org/docs/rules/
 
-  //"extends": "airbnb",
+  // "extends": "airbnb",
 
   "ecmaFeatures": {
     "arrowFunctions": false,                    // enable arrow functions
@@ -227,7 +227,10 @@
     ],
 
     "semi-spacing": 0,                // enforce spacing before and after semicolons
-    "semi": 0,                        // require or disallow use of semicolons instead of ASI
+    "semi": [                         // require or disallow use of semicolons instead of ASI
+        2,
+        "always"
+    ],
     "sort-vars": 0,                   // sort variables within the same declaration block (off by default)
 
     "space-after-keywords": [         // require a space after certain keywords (off by default)
